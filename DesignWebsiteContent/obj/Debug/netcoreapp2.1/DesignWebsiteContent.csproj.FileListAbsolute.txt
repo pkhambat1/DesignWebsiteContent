@@ -27,3 +27,32 @@ D:\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsi
 D:\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.pdb
 D:\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.csproj.CopyComplete
 D:\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\bin\Debug\netcoreapp2.1\DesignWebsiteContent.deps.json
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\bin\Debug\netcoreapp2.1\DesignWebsiteContent.runtimeconfig.json
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\bin\Debug\netcoreapp2.1\DesignWebsiteContent.runtimeconfig.dev.json
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\bin\Debug\netcoreapp2.1\DesignWebsiteContent.dll
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\bin\Debug\netcoreapp2.1\DesignWebsiteContent.pdb
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\bin\Debug\netcoreapp2.1\DesignWebsiteContent.Views.dll
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\bin\Debug\netcoreapp2.1\DesignWebsiteContent.Views.pdb
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.csprojAssemblyReference.cache
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.csproj.CoreCompileInputs.cache
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.RazorAssemblyInfo.cache
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.RazorAssemblyInfo.cs
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.AssemblyInfoInputs.cache
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.AssemblyInfo.cs
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.TagHelpers.input.cache
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.TagHelpers.output.cache
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.RazorCoreGenerate.cache
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.RazorTargetAssemblyInfo.cache
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.RazorTargetAssemblyInfo.cs
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.Views.pdb
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.dll
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.pdb
+C:\Users\Pezanne Khambatta\source\repos\DesignWebsiteContent\DesignWebsiteContent\obj\Debug\netcoreapp2.1\DesignWebsiteContent.csproj.CopyComplete

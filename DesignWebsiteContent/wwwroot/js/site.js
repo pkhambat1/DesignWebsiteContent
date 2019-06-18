@@ -32,3 +32,10 @@ $(function () {
         $(".copied").text("Copied to clipboard").show().fadeOut(1200);
     });
 });
+
+$(document).ready(function () {
+    $('input[type="file"]').change(function (e) {
+        var fileName = e.target.files[0].name;
+        $(this).parent().find('input[type="text"].image').val(fileName);
+    });
+});

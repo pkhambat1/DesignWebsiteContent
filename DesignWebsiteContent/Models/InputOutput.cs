@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DesignWebsiteContent.Models {
     public class InputOutput {
-        public ContentCarousel Input { get; set; }
+        public ContentCarousel ContentCarousel { get; set; }
         public string Output { get; set; }
     }
 }
