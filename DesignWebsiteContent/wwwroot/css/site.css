@@ -39,3 +39,7 @@ body {
 textarea {
     resize: none;
 }
+
+nav {
+    margin-bottom: 1rem;
+}

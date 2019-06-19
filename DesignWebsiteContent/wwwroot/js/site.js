@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    $('#convert').unbind().on('click', submitConvert);
+    $('#generate').unbind().on('click', submitConvert);
 });
 
 var submitConvert = function () {

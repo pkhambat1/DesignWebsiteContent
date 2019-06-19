@@ -10,7 +10,7 @@ namespace DesignWebsiteContent {
         public static InputOutput GenerateOutput(this InputOutput model) {
             var result = new InputOutput();
 
-
+            result.Output = "TODO";
 
 
             return result;
