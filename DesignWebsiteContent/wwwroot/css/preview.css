@@ -193,7 +193,7 @@ body .preview{
     padding-left: 10px;
 }
 
-p, p:hover {
+p .preview, p:hover .preview {
   font-family: medium-content-serif-font;
   text-decoration: none;
   font-size: 18px;
@@ -204,7 +204,7 @@ p, p:hover {
   background-color: transparent;
 }*/
 
-span {
+span .preview {
   font-size: 23px;
   font-family: medium-content-serif-font;
 }
@@ -301,7 +301,7 @@ span {
 }
 
 .page-footer {
-  padding: none;
+  padding: 0px;
 }
 
 #magic-line {

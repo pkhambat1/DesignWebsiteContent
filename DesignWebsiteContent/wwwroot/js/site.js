@@ -1,16 +1,29 @@
 ﻿$(document).ready(function () {
-    $('#generate').unbind().on('click', submitConvert);
+    $('#generate').unbind().on('click', submitGenerate);
 });
 
-var submitConvert = function () {
+var submitGenerate = function () {
 
-    var leftSlides = $('.LeftSlide');
-    var rightSlides = $('.RightSlide');
+    var title = $('.Title');
+    var caption = $('.Caption');
 
-    console.log(leftSlides, rightSlides);
+    var header = $('.Header');
+    var text = $('.Text');
 
-    for (var i = 0; i < leftSlides.length; i++) {
-        alert($(leftSlides[i]).val());
+
+    console.log(header);
+
+    for (var i = 0; i < header.length; i++) {
+        console.log(header[i]);
+    }
+    for (var j = 0; j < caption.length; j++) {
+        console.log(caption[j]);
+    }
+    for (var k = 0; k < title.length; k++) {
+        console.log(title[k]);
+    }
+    for (var l = 0; l < text.length; l++) {
+        console.log(text[l]);
     }
 
     var inputOutputmodel = {
@@ -63,6 +76,8 @@ $(function () {
 $(document).ready(function () {
     $('input[type="file"]').change(function (e) {
         var fileName = e.target.files[0].name;
-        $(this).parent().find('input[type="text"].image').val(fileName);
+        $(this).parent().find('input[type="text"]#LeftSlide_Image,\
+                                input[type = "text"]#RightSlide_Image,\
+                                input[type = "text"]#ContentCarousel_ThumbnailSlidePair_Thumbnail').val(fileName);
     });
 });
