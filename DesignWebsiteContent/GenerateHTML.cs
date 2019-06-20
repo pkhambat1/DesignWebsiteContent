@@ -8,11 +8,17 @@ namespace DesignWebsiteContent {
     public static class GenerateHTML {
 
         public static InputOutput GenerateOutput(this InputOutput model) {
-            var result = new InputOutput();
+            var result = model;
+            string rawHTML = "";
 
-            result.Output = "TODO";
+            rawHTML += "<div class=\"rect\">\n";
 
 
+
+
+            rawHTML += "</div>";
+
+            result.Output = rawHTML;
             return result;
         }
     }

@@ -3,16 +3,43 @@
 });
 
 var submitConvert = function () {
+
+    var leftSlides = $('.LeftSlide');
+    var rightSlides = $('.RightSlide');
+
+    console.log(leftSlides, rightSlides);
+
+    for (var i = 0; i < leftSlides.length; i++) {
+        alert($(leftSlides[i]).val());
+    }
+
     var inputOutputmodel = {
-        //Input: $('#input').val(),
+        ContentCarousel: {
+            FilePath: '#filePath',
+            ThumbnailSlidePair: '',
+            Slides: {
+                SlidePair: [{
+                    LeftSlide: '',
+                    RightSlide: ''
+                },
+                {
+                    LeftSlide: '',
+                    RightSlide: ''
+                },
+                {
+                    LeftSlide: '',
+                    RightSlide: ''
+                }]
+            }
+        },
         Output: ''
     };
+
     // Call ajax fn
     convert(inputOutputmodel);
 };
 
 var convert = function (inputOutputModel) {
-
     $.ajax({
         type: "POST",
         url: "/Home/GenerateJSON",

@@ -6,11 +6,11 @@ var itemCount = 2;
 // Being extremely nitpicky here
 $(window).on("resize", function (event) {
     windowWidth = $(this).width();
-    if ($(this).width() >= 992 && toggleVal == "uncollapsed") {
+    if ($(this).width() >= 992 && toggleVal === "uncollapsed") {
         console.log("if hit!");
         toggleVal = "stretchUncollapsed";
         navbarChange("stretchUncollapsed");
-    } else if ($(this).width() < 992 && toggleVal == "stretchUncollapsed") {
+    } else if ($(this).width() < 992 && toggleVal === "stretchUncollapsed") {
         console.log("else if hit!");
         toggleVal = "uncollapsed";
         navbarChange("uncollapsed");
@@ -19,7 +19,7 @@ $(window).on("resize", function (event) {
 
 $(window).onload = function () {
     document.body.className += " loaded";
-}
+};
 
 $(function () {
     var elements = document.getElementsByClassName('typewrite');
@@ -46,13 +46,13 @@ function navbarChange(toggleVal) {
         $('.navbar-light').css("background", "#fff");
         $('.navbar-light').css("opacity", ".96");
         $('.portfolio-navbar.navbar').css("box-shadow", "0 4px 10px rgba(0,0,0,.15)");
-        if (toggleVal == "uncollapsed") {
+        if (toggleVal === "uncollapsed") {
             $('.navbar-light').css("padding", "0px 5px 10px");
         } else {
             $('.navbar-light').css("padding", "0px 5px");
         }
 
-        if (toggleVal == "collapsed" || toggleVal == "initial") {
+        if (toggleVal === "collapsed" || toggleVal === "initial") {
             $('.portfolio-navbar.navbar').css("box-shadow", "0 4px 10px rgba(0,0,0,.15)");
         }
         // if on top 
@@ -62,7 +62,7 @@ function navbarChange(toggleVal) {
         $('.navbar-light').css({ "padding": "" });
         $('.navbar-light').css({ "background": "" });
         $('.navbar-light').css({ "opacity": "" });
-        if (toggleVal == "collapsed" || toggleVal == "initial" || toggleVal == "stretchUncollapsed") {
+        if (toggleVal === "collapsed" || toggleVal === "initial" || toggleVal === "stretchUncollapsed") {
             $('.portfolio-navbar.navbar').css({ "box-shadow": "" });
         } else {
             $('.portfolio-navbar.navbar').css("box-shadow", "0 4px 10px rgba(0,0,0,.15)");
@@ -107,10 +107,10 @@ $(document).ready(function () {
         responsiveClass: true,
         responsive: {
             0: {
-                items: 1,
+                items: 1
             },
             768: {
-                items: 2,
+                items: 2
             }
         },
         navText: ["<div class=\"carousel-control-prev\" role=\"button\" data-slide=\"prev\"><div class=\"arrowbox\"><i class=\"fa fa-angle-left align-middle mt-4 mb-4 \"></i></div><span class=\"sr-only\">Previous</span></div>",
