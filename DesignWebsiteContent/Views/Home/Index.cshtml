@@ -20,9 +20,22 @@
         <div class="col-md-6 col-12">
             <h4>Project</h4>
         </div>
+        <div class="col-12 test">
+            Html.NameFor(m => m.ContentCarousel.FilePath) =  @Html.NameFor(m => m.ContentCarousel.FilePath)<br />
+            Html.NameFor(m => m.ContentCarousel.ThumbnailSlidePair.Thumbnail) = @Html.NameFor(m => m.ContentCarousel.ThumbnailSlidePair.Thumbnail)<br />
+            Html.NameFor(m => m.ContentCarousel.ThumbnailSlidePair.TitleBox.Title) = @Html.NameFor(m => m.ContentCarousel.ThumbnailSlidePair.TitleBox.Title)<br />
+            Html.NameFor(m => m.ContentCarousel.ThumbnailSlidePair.TitleBox.Caption) = @Html.NameFor(m => m.ContentCarousel.ThumbnailSlidePair.TitleBox.Caption)<br />
+            Html.NameFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.Image) = @Html.NameFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.Image)<br />
+        </div>
+
+
+
+
+
         <div class="col-md-6 col-12">
             <div class="form-group">
                 @Html.LabelFor(m => m.ContentCarousel.FilePath)
+                
                 <div class="@Html.NameFor(m => m.ContentCarousel.FilePath)">
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
@@ -76,7 +89,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text">/</div>
                         </div>
-                        @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.Image, new { @class = "form-control", @disabled = true })
+                        @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.Image, new { @class = "form-control image", @disabled = true })
                     </div>
                 </div>
 
@@ -101,7 +114,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text">/</div>
                         </div>
-                        @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.Image, new { @class = "form-control", @disabled = true })
+                        @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.Image, new { @class = "form-control image", @disabled = true })
                     </div>
                 </div>
 
@@ -127,7 +140,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text">/</div>
                         </div>
-                        @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.Image, new { @class = "form-control", @disabled = true })
+                        @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.Image, new { @class = "form-control image", @disabled = true })
                     </div>
                 </div>
 
@@ -152,7 +165,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text">/</div>
                         </div>
-                        @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.Image, new { @class = "form-control", @disabled = true })
+                        @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.Image, new { @class = "form-control image", @disabled = true })
                     </div>
                 </div>
 
@@ -213,7 +226,7 @@
             <h4>Preview</h4>
         </div>
         <div class="col-12">
-            <div id="previewHTML">
+            <div class="preview">
                 <div class="rect">
                     <div class="owl-carousel owl-theme">
                         <div class="item pl-1 pr-1">

@@ -4,32 +4,40 @@
 
 var submitGenerate = function () {
 
-    var title = $('.Title');
-    var caption = $('.Caption');
+    var filePath = $('#ContentCarousel_FilePath').val();
+    var title = $('#ContentCarousel_ThumbnailSlidePair_TitleBox_Title').val();
+    var caption = $('#ContentCarousel_ThumbnailSlidePair_TitleBox_Caption').val();
+    var thumbnail = $('#ContentCarousel_ThumbnailSlidePair_Thumbnail').val();
 
-    var header = $('.Header');
-    var text = $('.Text');
+    var headers = [];
+    var textValues = [];
+    var images = [];
+
+    $('.Header').each(function () {
+        headers.push($(this).find('input[type="text"]').val());
+    });
+    $('.Text').each(function () {
+        textValues.push($(this).find('textarea').val());
+    });
+    $('.image').each(function () {
+        images.push($(this).val());
+    });
+
+    var thumbnailSlidePair = {
+        Thumbnail: thumbnail,
+        TitleBox: {
+            Title: title,
+            Caption: caption
+        }
+    };
 
 
-    console.log(header);
-
-    for (var i = 0; i < header.length; i++) {
-        console.log(header[i]);
-    }
-    for (var j = 0; j < caption.length; j++) {
-        console.log(caption[j]);
-    }
-    for (var k = 0; k < title.length; k++) {
-        console.log(title[k]);
-    }
-    for (var l = 0; l < text.length; l++) {
-        console.log(text[l]);
-    }
+    console.log(filePath, title, caption, thumbnail, headers, textValues, images);
 
     var inputOutputmodel = {
         ContentCarousel: {
-            FilePath: '#filePath',
-            ThumbnailSlidePair: '',
+            FilePath: filePath,
+            ThumbnailSlidePair: thumbnailSlidePair,
             Slides: {
                 SlidePair: [{
                     LeftSlide: '',
