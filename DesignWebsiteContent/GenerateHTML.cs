@@ -12,10 +12,6 @@ namespace DesignWebsiteContent {
             string rawHTML = "";
 
             rawHTML += "<div class=\"rect\">\n";
-
-
-
-
             rawHTML += "</div>";
 
             result.Output = rawHTML;
