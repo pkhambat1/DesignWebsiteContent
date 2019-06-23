@@ -1,9 +1,9 @@
 ﻿$(document).ready(function () {
-    $('#generate').unbind().on('click', submitGenerate);
+    $('#generate').on('click', submitGenerateHTML());
+    $('#refresh').on('click', submitRefreshPreview);
 });
 
-var submitGenerate = function () {
-
+var submitGenerateHTML = function () {
     var filePath = $('#ContentCarousel_FilePath').val();
     var title = $('#ContentCarousel_ThumbnailSlidePair_TitleBox_Title').val();
     var caption = $('#ContentCarousel_ThumbnailSlidePair_TitleBox_Caption').val();
@@ -31,42 +31,67 @@ var submitGenerate = function () {
         }
     };
 
+    var textBoxes = [];
 
-    console.log(filePath, title, caption, thumbnail, headers, textValues, images);
+    for (var k = 0; k < headers.length; k++) {
+        textBoxes.push({
+            Header: headers[k],
+            Text: textValues[k]
+        });
+    }
 
-    var inputOutputmodel = {
+    var leftSlides = [];
+    var rightSlides = [];
+
+    for (var i = 0; i < images.length; i++) {
+        var slide = {
+            Image: images[i],
+            TextBoxes: textBoxes
+        };
+
+        if (i % 2 === 0) {
+            leftSlides.push(slide);
+        } else {
+            rightSlides.push(slide);
+        }
+    }
+
+    var slidePairs = [];
+
+    for (var j = 0; j < leftSlides.length; j++) {
+        slidePairs.push({
+            LeftSlide: leftSlides[j],
+            RightSlide: rightSlides[j]
+        });
+    }
+
+    var inputOutputModel = {
         ContentCarousel: {
             FilePath: filePath,
             ThumbnailSlidePair: thumbnailSlidePair,
-            Slides: {
-                SlidePair: [{
-                    LeftSlide: '',
-                    RightSlide: ''
-                },
-                {
-                    LeftSlide: '',
-                    RightSlide: ''
-                },
-                {
-                    LeftSlide: '',
-                    RightSlide: ''
-                }]
-            }
+            SlidePairs: slidePairs
         },
         Output: ''
     };
-
-    // Call ajax fn
-    convert(inputOutputmodel);
+    generateHTML(inputOutputModel);
 };
 
-var convert = function (inputOutputModel) {
+var submitRefreshPreview = function () {
+    console.log('submitRefreshPreview hit');
+    $('.preview').html($('#output').val());
+    loadCarousel();
+};
+
+var generateHTML = function (inputOutputModel) {
+    console.log('generateHTML');
     $.ajax({
         type: "POST",
         url: "/Home/GenerateJSON",
         data: inputOutputModel,
         success: function (d) {
             $('#output').val(d.output);
+            slideCarousel();
+            submitRefreshPreview();
         },
         error: function (err) { }
     });
@@ -81,11 +106,15 @@ $(function () {
     });
 });
 
+//$(function () {
+//    $('#output').change(submitRefreshPreview);
+//});
+
 $(document).ready(function () {
     $('input[type="file"]').change(function (e) {
         var fileName = e.target.files[0].name;
         $(this).parent().find('input[type="text"]#LeftSlide_Image,\
-                                input[type = "text"]#RightSlide_Image,\
-                                input[type = "text"]#ContentCarousel_ThumbnailSlidePair_Thumbnail').val(fileName);
+                                input[type="text"]#RightSlide_Image,\
+                                input[type="text"]#ContentCarousel_ThumbnailSlidePair_Thumbnail').val(fileName);
     });
 });

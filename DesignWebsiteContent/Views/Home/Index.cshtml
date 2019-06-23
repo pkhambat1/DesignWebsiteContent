@@ -13,25 +13,12 @@
             </div>
         </div>
     </div>
-    <hr>
 </div>
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-12">
             <h4>Project</h4>
         </div>
-        <div class="col-12 test">
-            Html.NameFor(m => m.ContentCarousel.FilePath) =  @Html.NameFor(m => m.ContentCarousel.FilePath)<br />
-            Html.NameFor(m => m.ContentCarousel.ThumbnailSlidePair.Thumbnail) = @Html.NameFor(m => m.ContentCarousel.ThumbnailSlidePair.Thumbnail)<br />
-            Html.NameFor(m => m.ContentCarousel.ThumbnailSlidePair.TitleBox.Title) = @Html.NameFor(m => m.ContentCarousel.ThumbnailSlidePair.TitleBox.Title)<br />
-            Html.NameFor(m => m.ContentCarousel.ThumbnailSlidePair.TitleBox.Caption) = @Html.NameFor(m => m.ContentCarousel.ThumbnailSlidePair.TitleBox.Caption)<br />
-            Html.NameFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.Image) = @Html.NameFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.Image)<br />
-        </div>
-
-
-
-
-
         <div class="col-md-6 col-12">
             <div class="form-group">
                 @Html.LabelFor(m => m.ContentCarousel.FilePath)
@@ -82,24 +69,24 @@
         <div class="col-md-6 col-12">
             <div class="form-group">
 
-                @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.Image)
-                <div class="@Html.NameFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.Image)">
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.Image)
+                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.Image)">
                     <input type="file" class="form-control-file">
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text">/</div>
                         </div>
-                        @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.Image, new { @class = "form-control image", @disabled = true })
+                        @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.Image, new { @class = "form-control image", @disabled = true })
                     </div>
                 </div>
 
-                @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header)
-                <div class="@Html.NameFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header)">
-                    @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header, new { @class = "form-control" })
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header)
+                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header)">
+                    @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header, new { @class = "form-control" })
                 </div>
-                @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text)
-                <div class="@Html.NameFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text)">
-                    @Html.TextAreaFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text, new { @class = "form-control", @rows = "5" })
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text)
+                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text)">
+                    @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text, new { @class = "form-control", @rows = "5" })
                 </div>
             </div>
         </div>
@@ -107,25 +94,25 @@
         <div class="col-md-6 col-12">
             <div class="form-group">
 
-                @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.Image)
-                <div class="@Html.NameFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.Image)">
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.Image)
+                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.Image)">
                     <input type="file" class="form-control-file">
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text">/</div>
                         </div>
-                        @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.Image, new { @class = "form-control image", @disabled = true })
+                        @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.Image, new { @class = "form-control image", @disabled = true })
                     </div>
                 </div>
 
-                @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header)
-                <div class="@Html.NameFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header)">
-                    @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header, new { @class = "form-control" })
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header)
+                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header)">
+                    @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header, new { @class = "form-control" })
                 </div>
 
-                @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text)
-                <div class="@Html.NameFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text)">
-                    @Html.TextAreaFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text, new { @class = "form-control", @rows = "5" })
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text)
+                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text)">
+                    @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text, new { @class = "form-control", @rows = "5" })
                 </div>
             </div>
         </div>
@@ -133,24 +120,24 @@
         <div class="col-md-6 col-12">
             <div class="form-group">
 
-                @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.Image)
-                <div class="@Html.NameFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.Image)">
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.Image)
+                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.Image)">
                     <input type="file" class="form-control-file">
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text">/</div>
                         </div>
-                        @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.Image, new { @class = "form-control image", @disabled = true })
+                        @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.Image, new { @class = "form-control image", @disabled = true })
                     </div>
                 </div>
 
-                @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header)
-                <div class="@Html.NameFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header)">
-                    @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header, new { @class = "form-control" })
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header)
+                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header)">
+                    @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header, new { @class = "form-control" })
                 </div>
-                @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text)
-                <div class="@Html.NameFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text)">
-                    @Html.TextAreaFor(m => m.ContentCarousel.Slides.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text, new { @class = "form-control", @rows = "5" })
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text)
+                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text)">
+                    @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text, new { @class = "form-control", @rows = "5" })
                 </div>
             </div>
         </div>
@@ -158,25 +145,25 @@
         <div class="col-md-6 col-12">
             <div class="form-group">
 
-                @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.Image)
-                <div class="@Html.NameFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.Image)">
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.Image)
+                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.Image)">
                     <input type="file" class="form-control-file">
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text">/</div>
                         </div>
-                        @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.Image, new { @class = "form-control image", @disabled = true })
+                        @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.Image, new { @class = "form-control image", @disabled = true })
                     </div>
                 </div>
 
-                @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header)
-                <div class="@Html.NameFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header)">
-                    @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header, new { @class = "form-control" })
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header)
+                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header)">
+                    @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header, new { @class = "form-control" })
                 </div>
 
-                @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text)
-                <div class="@Html.NameFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text)">
-                    @Html.TextAreaFor(m => m.ContentCarousel.Slides.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text, new { @class = "form-control", @rows = "5" })
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text)
+                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text)">
+                    @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text, new { @class = "form-control", @rows = "5" })
                 </div>
             </div>
         </div>
@@ -197,12 +184,12 @@
         <div class="col-12">
             <div class="form-group">
                 <h4>@Html.LabelFor(m => m.Output)</h4>
-                @Html.TextAreaFor(m => m.Output, new { @class = "form-control", @id = "output", @rows = "10" })
+                @Html.TextAreaFor(m => m.Output, new { @class = "form-control", @id = "output", @rows = "10", @style = "font-family:calibri;"})
             </div>
         </div>
         <div class="col-auto mr-auto">
             <div class="form-group">
-                <button type="button" class="btn btn-success" id="generate">Refresh Preview</button>
+                <button type="button" class="btn btn-success" id="refresh">Refresh Preview</button>
             </div>
         </div>
         <div class="col-auto">
@@ -216,7 +203,7 @@
             <p class="copied"></p>
         </div>
     </div>
-    <hr>
+    
 </div>
 
 
@@ -225,89 +212,12 @@
         <div class="col-12 mb-4">
             <h4>Preview</h4>
         </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
         <div class="col-12">
             <div class="preview">
-                <div class="rect">
-                    <div class="owl-carousel owl-theme">
-                        <div class="item pl-1 pr-1">
-                            <img src="img/elevated-bar-cart/EB_T_16_9.jpg">
-                        </div>
-                        <div class="item">
-                            <div class="textDescription titleCaption">
-                                <span><strong>Elevated Bar Cart</strong></span><br /><br />
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Donec a risus quis tortor eleifend hendrerit vitae eget orci.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="item pl-1 pr-1">
-                            <img src="img/elevated-bar-cart/EB2.jpg">
-                        </div>
-                        <div class="item">
-                            <div class="textDescription mb-2">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Donec a risus quis tortor eleifend hendrerit vitae eget orci.
-                                    Curabitur sit amet diam quis dolor consectetur elementum ut mollis nibh.
-                                    In vel justo in nulla ornare rhoncus in nec arcu.
-                                    Nulla porta risus et convallis cursus.
-                                </p>
-                            </div>
-                            <div class="textDescription">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Donec a risus quis tortor eleifend hendrerit vitae eget orci.
-                                    Curabitur sit amet diam quis dolor consectetur elementum ut mollis nibh.
-                                    In vel justo in nulla ornare rhoncus in nec arcu.
-                                    Nulla porta risus et convallis cursus.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <div class="pl-1 pr-1 mb-2">
-                                <img src="img/elevated-bar-cart/EB1.jpg">
-                            </div>
-                            <div class="textDescription">
-                                <p>
-                                    In vel justo in nulla ornare rhoncus in nec arcu.
-                                    Nulla porta risus et convallis cursus.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="textDescription mb-2">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Donec a risus quis tortor eleifend hendrerit vitae eget orci.
-                                </p>
-                            </div>
-                            <div class="pl-1 pr-1">
-                                <img src="img/elevated-bar-cart/EB3.png">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pl-1 pr-1 mb-2">
-                                <img src="img/elevated-bar-cart/EB_T_16_9.jpg">
-
-                            </div>
-                            <div class="textDescription mb-2">
-                                <p>
-                                    Curabitur sit amet diam quis dolor consectetur elementum ut mollis nibh.
-                                    In vel justo in nulla ornare rhoncus in nec arcu.
-                                    Nulla porta risus et convallis cursus.
-                                </p>
-                            </div>
-                            <div class="textDescription">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Donec a risus quis tortor eleifend hendrerit vitae eget orci.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

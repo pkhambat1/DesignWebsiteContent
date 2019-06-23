@@ -11,6 +11,6 @@ namespace DesignWebsiteContent.Models {
         public string FilePath { get; set; }
 
         public ThumbnailSlidePair ThumbnailSlidePair { get; set; }
-        public List<SlidePair> Slides { get; set; }
+        public List<SlidePair> SlidePairs { get; set; }
     }
 }

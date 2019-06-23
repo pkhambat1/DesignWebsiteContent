@@ -24,11 +24,11 @@
     <script src="~/typed.js"></script>
 
     @*CSS*@
-    <link href="~/css/site.css" rel="stylesheet">
     <link href="~/css/preview.css" rel="stylesheet">
+    <link href="~/css/site.css" rel="stylesheet">
 
     @*JS*@
-    <script src="~/js/partial.js"></script>
+    <script src="~/js/preview.js"></script>
     <script src="~/js/site.js"></script>
 
 </head>
@@ -43,8 +43,9 @@
 
     <partial name="_CookieConsentPartial" />
 
-    <div class="container body-content">
-        @RenderBody()
+
+    @RenderBody()
+    <div class="container">
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - DesignWebsiteContent</p>

@@ -17,10 +17,6 @@ $(window).on("resize", function (event) {
     }
 });
 
-$(window).onload = function () {
-    document.body.className += " loaded";
-};
-
 $(function () {
     var elements = document.getElementsByClassName('typewrite');
     for (var i = 0; i < elements.length; i++) {
@@ -92,10 +88,12 @@ $(document).ready(function () {
     });
 });
 
+$(document).on('ready', function () {
+    loadCarousel();
+    console.log('hello');
+});
 
-
-$(document).ready(function () {
-
+var loadCarousel = function () {
     $('.owl-carousel').owlCarousel({
         items: 1,
         margin: 0,
@@ -114,16 +112,15 @@ $(document).ready(function () {
             }
         },
         navText: ["<div class=\"carousel-control-prev\" role=\"button\" data-slide=\"prev\"><div class=\"arrowbox\"><i class=\"fa fa-angle-left align-middle mt-4 mb-4 \"></i></div><span class=\"sr-only\">Previous</span></div>",
-            "<div class=\"carousel-control-next\" role=\"button\" data-slide=\"next\"><div class=\"arrowbox\"><i class=\"fa fa-angle-right align-middle mt-4 mb-4 \"></i></div><span class=\"sr-only\">Next</span></div>"]
+                    "<div class=\"carousel-control-next\" role=\"button\" data-slide=\"next\"><div class=\"arrowbox\"><i class=\"fa fa-angle-right align-middle mt-4 mb-4 \"></i></div><span class=\"sr-only\">Next</span></div>"]
     }).on("dragged.owl.carousel", function (event) {
         $('html,body').animate({ scrollTop: $(this).closest('.rect').offset().top - 80 }, 400);
     });
 
     var owl = $(".owl-carousel").data();
-    console.log(owl);
+    console.log('owl = ' + owl);
 
-
-});
+};
 
 $(document).ready(function () {
     $('.arrowbox, .owl-dots').css("opacity", "0");
@@ -143,7 +140,12 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function () {
+$(function () {
+    slideCarousel();
+});
+
+var slideCarousel = function () {
+    console.log('slideCarousel hit');
     $('.owl-carousel').on('translate.owl.carousel', function () {
         if ($(this).find('button.owl-prev').hasClass('disabled')) {
             $(this).find('.carousel-control-next').css("width", "100%");
@@ -151,7 +153,8 @@ $(document).ready(function () {
             $(this).find('.carousel-control-next').css({ "width": "45px" });
         }
     });
-});
+};
+
 
 
 
