@@ -88,15 +88,10 @@ $(document).ready(function () {
     });
 });
 
-$(document).on('ready', function () {
-    loadCarousel();
-    console.log('hello');
-});
-
 var loadCarousel = function () {
     $('.owl-carousel').owlCarousel({
         items: 1,
-        margin: 0,
+        margin: 3,
         autoHeight: true,
         mouseDrag: false,
         autoplay: false,
@@ -112,7 +107,7 @@ var loadCarousel = function () {
             }
         },
         navText: ["<div class=\"carousel-control-prev\" role=\"button\" data-slide=\"prev\"><div class=\"arrowbox\"><i class=\"fa fa-angle-left align-middle mt-4 mb-4 \"></i></div><span class=\"sr-only\">Previous</span></div>",
-                    "<div class=\"carousel-control-next\" role=\"button\" data-slide=\"next\"><div class=\"arrowbox\"><i class=\"fa fa-angle-right align-middle mt-4 mb-4 \"></i></div><span class=\"sr-only\">Next</span></div>"]
+            "<div class=\"carousel-control-next\" role=\"button\" data-slide=\"next\"><div class=\"arrowbox\"><i class=\"fa fa-angle-right align-middle mt-4 mb-4 \"></i></div><span class=\"sr-only\">Next</span></div>"]
     }).on("dragged.owl.carousel", function (event) {
         $('html,body').animate({ scrollTop: $(this).closest('.rect').offset().top - 80 }, 400);
     });
@@ -122,7 +117,7 @@ var loadCarousel = function () {
 
 };
 
-$(document).ready(function () {
+var hideNav = function () {
     $('.arrowbox, .owl-dots').css("opacity", "0");
     $('.rect').hover(function () {
         $(this).find('.arrowbox').css("opacity", ".4");
@@ -132,25 +127,15 @@ $(document).ready(function () {
             $(this).find('.arrowbox').css("opacity", "0");
             $(this).find('.owl-dots').css("opacity", "0");
         });
-});
-
-$(document).ready(function () {
-    $('.carousel-control-prev, .carousel-control-next, .owl-dots').on('click', function () {
-        $('html,body').animate({ scrollTop: $(this).closest('.rect').offset().top - 80 }, 400);
-    });
-});
-
-$(function () {
-    slideCarousel();
-});
+};
 
 var slideCarousel = function () {
-    console.log('slideCarousel hit');
     $('.owl-carousel').on('translate.owl.carousel', function () {
         if ($(this).find('button.owl-prev').hasClass('disabled')) {
             $(this).find('.carousel-control-next').css("width", "100%");
         } else {
             $(this).find('.carousel-control-next').css({ "width": "45px" });
+            $(this).find('.rect').css({ "padding-left": "" });
         }
     });
 };

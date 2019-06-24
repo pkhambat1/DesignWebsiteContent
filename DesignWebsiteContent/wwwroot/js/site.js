@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
-    $('#generate').on('click', submitGenerateHTML());
-    $('#refresh').on('click', submitRefreshPreview);
+    $('#generate').unbind().on('click', submitGenerateHTML);
+    $('#refresh').unbind().on('click', submitRefreshPreview);
 });
 
 var submitGenerateHTML = function () {
@@ -80,6 +80,8 @@ var submitRefreshPreview = function () {
     console.log('submitRefreshPreview hit');
     $('.preview').html($('#output').val());
     loadCarousel();
+    slideCarousel();
+    hideNav();
 };
 
 var generateHTML = function (inputOutputModel) {
@@ -105,10 +107,6 @@ $(function () {
         $(".copied").text("Copied to clipboard").show().fadeOut(1200);
     });
 });
-
-//$(function () {
-//    $('#output').change(submitRefreshPreview);
-//});
 
 $(document).ready(function () {
     $('input[type="file"]').change(function (e) {
