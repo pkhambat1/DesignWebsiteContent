@@ -22,7 +22,7 @@
         <div class="col-md-6 col-12">
             <div class="form-group">
                 @Html.LabelFor(m => m.ContentCarousel.FilePath)
-                
+
                 <div class="@Html.NameFor(m => m.ContentCarousel.FilePath)">
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
@@ -34,7 +34,6 @@
             </div>
         </div>
     </div>
-
     <div class="row">
         <div class="col-md-6 col-12">
             <div class="form-group">
@@ -80,14 +79,10 @@
                     </div>
                 </div>
 
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header)
-                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header)">
-                    @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header, new { @class = "form-control" })
-                </div>
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text)
-                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text)">
-                    @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text, new { @class = "form-control", @rows = "5" })
-                </div>
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBox.Header)
+                @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBox.Header, new { @class = "form-control header" })
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBox.Text)
+                @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBox.Text, new { @class = "form-control textValue", @rows = "5" })
             </div>
         </div>
 
@@ -105,15 +100,10 @@
                     </div>
                 </div>
 
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header)
-                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header)">
-                    @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header, new { @class = "form-control" })
-                </div>
-
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text)
-                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text)">
-                    @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text, new { @class = "form-control", @rows = "5" })
-                </div>
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Header)
+                @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Header, new { @class = "form-control header" })
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Text)
+                @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Text, new { @class = "form-control textValue", @rows = "5" })
             </div>
         </div>
 
@@ -131,14 +121,10 @@
                     </div>
                 </div>
 
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header)
-                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header)">
-                    @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Header, new { @class = "form-control" })
-                </div>
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text)
-                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text)">
-                    @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBoxes.FirstOrDefault().Text, new { @class = "form-control", @rows = "5" })
-                </div>
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBox.Header)
+                @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBox.Header, new { @class = "form-control header" })
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Text)
+                @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBox.Text, new { @class = "form-control textValue", @rows = "5" })
             </div>
         </div>
 
@@ -155,16 +141,10 @@
                         @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.Image, new { @class = "form-control image", @disabled = true })
                     </div>
                 </div>
-
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header)
-                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header)">
-                    @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Header, new { @class = "form-control" })
-                </div>
-
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text)
-                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text)">
-                    @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBoxes.FirstOrDefault().Text, new { @class = "form-control", @rows = "5" })
-                </div>
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Header)
+                @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Header, new { @class = "form-control header" })
+                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Text)
+                @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Text, new { @class = "form-control textValue", @rows = "5" })
             </div>
         </div>
     </div>
@@ -184,7 +164,7 @@
         <div class="col-12">
             <div class="form-group">
                 <h4>@Html.LabelFor(m => m.Output)</h4>
-                @Html.TextAreaFor(m => m.Output, new { @class = "form-control", @id = "output", @rows = "10", @style = "font-family:calibri;"})
+                @Html.TextAreaFor(m => m.Output, new { @class = "form-control", @id = "output", @rows = "10", @style = "font-family:calibri;" })
             </div>
         </div>
         <div class="col-auto mr-auto">
@@ -203,7 +183,7 @@
             <p class="copied"></p>
         </div>
     </div>
-    
+
 </div>
 
 

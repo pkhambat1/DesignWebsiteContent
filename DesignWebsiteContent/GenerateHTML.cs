@@ -23,28 +23,19 @@ namespace DesignWebsiteContent
             rawHTML += "\t\t<div class=\"item\">\n\t\t\t<div class=\"textDescription titleCaption\">\n\t\t\t\t<span><strong>" + title + "</strong></span><br />\n\t\t\t\t<p>" + caption + "</p>\n\t\t\t</div>\n\t\t</div>\n";
 
             for(int i = 0; i < model.ContentCarousel.SlidePairs.Count; i++) {
-
                 rawHTML += "\t\t<div class=\"item pl-1 pr-1\">\n\t\t\t<img src=\"img/" + filePath + "/" + model.ContentCarousel.SlidePairs[i].LeftSlide.Image + "\">\n\t\t</div>\n";
                 rawHTML += "\t\t<div class=\"item\">\n";
-
-                for(int j = 0; j < model.ContentCarousel.SlidePairs[i].LeftSlide.TextBoxes.Count; j++) {
-                    rawHTML += "\t\t\t<div class=\"textDescription mb-2\">\n";
-                    rawHTML += "\t\t\t\t<p>" + model.ContentCarousel.SlidePairs[i].LeftSlide.TextBoxes[j].Header + "</p>\n";
-                    rawHTML += "\t\t\t\t<p>" + model.ContentCarousel.SlidePairs[i].LeftSlide.TextBoxes[j].Text + "</p>\n";
-                    rawHTML += "\t\t</div>\n";
-                }
+                rawHTML += "\t\t\t<div class=\"textDescription mb-2\">\n";
+                rawHTML += "\t\t\t\t<p>" + model.ContentCarousel.SlidePairs[i].LeftSlide.TextBox.Header + "</p>\n";
+                rawHTML += "\t\t\t\t<p>" + model.ContentCarousel.SlidePairs[i].LeftSlide.TextBox.Text + "</p>\n";
+                rawHTML += "\t\t\t</div>\n";
                 rawHTML += "\t\t</div>\n";
-
                 rawHTML += "\t\t<div class=\"item pl-1 pr-1\">\n\t\t\t<img src=\"img/" + filePath + "/" + model.ContentCarousel.SlidePairs[i].RightSlide.Image + "\">\n\t\t</div>\n";
                 rawHTML += "\t\t<div class=\"item\">\n";
-
-                for(int j = 0; j < model.ContentCarousel.SlidePairs[i].RightSlide.TextBoxes.Count; j++) {
-                    rawHTML += "\t\t\t<div class=\"textDescription mb-2\">\n";
-                    rawHTML += "\t\t\t\t<p>" + model.ContentCarousel.SlidePairs[i].RightSlide.TextBoxes[j].Header + "</p>\n";
-                    rawHTML += "\t\t\t\t<p>" + model.ContentCarousel.SlidePairs[i].RightSlide.TextBoxes[j].Text + "</p>\n";
-                    rawHTML += "\t\t</div>\n";
-                }
-
+                rawHTML += "\t\t\t<div class=\"textDescription mb-2\">\n";
+                rawHTML += "\t\t\t\t<p>" + model.ContentCarousel.SlidePairs[i].RightSlide.TextBox.Header + "</p>\n";
+                rawHTML += "\t\t\t\t<p>" + model.ContentCarousel.SlidePairs[i].RightSlide.TextBox.Text + "</p>\n";
+                rawHTML += "\t\t\t</div>\n";
                 rawHTML += "\t\t</div>\n";
             }
 

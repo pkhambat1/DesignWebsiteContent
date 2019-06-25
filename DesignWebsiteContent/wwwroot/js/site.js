@@ -13,11 +13,11 @@ var submitGenerateHTML = function () {
     var textValues = [];
     var images = [];
 
-    $('.Header').each(function () {
-        headers.push($(this).find('input[type="text"]').val());
+    $('.header').each(function () {
+        headers.push($(this).val());
     });
-    $('.Text').each(function () {
-        textValues.push($(this).find('textarea').val());
+    $('.textValue').each(function () {
+        textValues.push($(this).val());
     });
     $('.image').each(function () {
         images.push($(this).val());
@@ -31,22 +31,16 @@ var submitGenerateHTML = function () {
         }
     };
 
-    var textBoxes = [];
-
-    for (var k = 0; k < headers.length; k++) {
-        textBoxes.push({
-            Header: headers[k],
-            Text: textValues[k]
-        });
-    }
-
     var leftSlides = [];
     var rightSlides = [];
 
     for (var i = 0; i < images.length; i++) {
         var slide = {
             Image: images[i],
-            TextBoxes: textBoxes
+            TextBox: {
+                Header: headers[i],
+                Text: textValues[i]
+            }
         };
 
         if (i % 2 === 0) {
@@ -77,11 +71,10 @@ var submitGenerateHTML = function () {
 };
 
 var submitRefreshPreview = function () {
-    console.log('submitRefreshPreview hit');
     $('.preview').html($('#output').val());
     loadCarousel();
     slideCarousel();
-    hideNav();
+    hideOwlNav();
 };
 
 var generateHTML = function (inputOutputModel) {

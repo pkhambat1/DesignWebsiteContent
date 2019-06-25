@@ -112,12 +112,9 @@ var loadCarousel = function () {
         $('html,body').animate({ scrollTop: $(this).closest('.rect').offset().top - 80 }, 400);
     });
 
-    var owl = $(".owl-carousel").data();
-    console.log('owl = ' + owl);
-
 };
 
-var hideNav = function () {
+var hideOwlNav = function () {
     $('.arrowbox, .owl-dots').css("opacity", "0");
     $('.rect').hover(function () {
         $(this).find('.arrowbox').css("opacity", ".4");
