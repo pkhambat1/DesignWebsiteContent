@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DesignWebsiteContent.Models {
     public class RightSlide {
-        public TextBox TextBox { get; set; }
+        public List<string> TextBox { get; set; }
         public string Image { get; set; }
     }
 }

@@ -23,13 +23,11 @@
             <div class="form-group">
                 @Html.LabelFor(m => m.ContentCarousel.FilePath)
 
-                <div class="@Html.NameFor(m => m.ContentCarousel.FilePath)">
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">img/</div>
-                        </div>
-                        @Html.TextBoxFor(m => m.ContentCarousel.FilePath, new { @class = "form-control" })
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">img/</div>
                     </div>
+                    @Html.TextBoxFor(m => m.ContentCarousel.FilePath, new { @class = "form-control filePath" })
                 </div>
             </div>
         </div>
@@ -38,7 +36,7 @@
         <div class="col-md-6 col-12">
             <div class="form-group">
                 @Html.LabelFor(m => m.ContentCarousel.ThumbnailSlidePair.Thumbnail)
-                <div class="@Html.NameFor(m => m.ContentCarousel.ThumbnailSlidePair.Thumbnail)">
+                <div class="thumbnail">
                     <input type="file" class="form-control-file">
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
@@ -53,23 +51,16 @@
         <div class="col-md-6 col-12">
             <div class="form-group">
                 @Html.LabelFor(m => m.ContentCarousel.ThumbnailSlidePair.TitleBox.Title)
-                <div class="@Html.NameFor(m => m.ContentCarousel.ThumbnailSlidePair.TitleBox.Title)">
-                    @Html.TextBoxFor(m => m.ContentCarousel.ThumbnailSlidePair.TitleBox.Title, new { @class = "form-control" })
-                </div>
-
+                @Html.TextBoxFor(m => m.ContentCarousel.ThumbnailSlidePair.TitleBox.Title, new { @class = "form-control titleValue" })
                 @Html.LabelFor(m => m.ContentCarousel.ThumbnailSlidePair.TitleBox.Caption)
-
-                <div class="@Html.NameFor(m => m.ContentCarousel.ThumbnailSlidePair.TitleBox.Caption)">
-                    @Html.TextAreaFor(m => m.ContentCarousel.ThumbnailSlidePair.TitleBox.Caption, new { @class = "form-control", @rows = "5" })
-                </div>
+                @Html.TextAreaFor(m => m.ContentCarousel.ThumbnailSlidePair.TitleBox.Caption, new { @class = "form-control caption", @rows = "5" })
             </div>
         </div>
 
         <div class="col-md-6 col-12">
             <div class="form-group">
-
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.Image)
-                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.Image)">
+                <div class="leftSlide">
+                    @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.Image)
                     <input type="file" class="form-control-file">
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
@@ -77,20 +68,16 @@
                         </div>
                         @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.Image, new { @class = "form-control image", @disabled = true })
                     </div>
-                </div>
 
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBox.Header)
-                @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBox.Header, new { @class = "form-control header" })
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBox.Text)
-                @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBox.Text, new { @class = "form-control textValue", @rows = "5" })
+                    @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBox.FirstOrDefault())
+                    @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBox.FirstOrDefault(), new { @class = "form-control textBox", @rows = "5" })
+                </div>
             </div>
         </div>
-
         <div class="col-md-6 col-12">
             <div class="form-group">
-
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.Image)
-                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.Image)">
+                <div class="rightSlide">
+                    @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.Image)
                     <input type="file" class="form-control-file">
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
@@ -98,57 +85,25 @@
                         </div>
                         @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.Image, new { @class = "form-control image", @disabled = true })
                     </div>
-                </div>
 
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Header)
-                @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Header, new { @class = "form-control header" })
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Text)
-                @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Text, new { @class = "form-control textValue", @rows = "5" })
+                    <div class="textBox">
+                        @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.FirstOrDefault())
+                        @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.FirstOrDefault(), new { @class = "form-control" })
+                        @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Text)
+                        @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Text, new { @class = "form-control textValue", @rows = "5" })
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="col-md-6 col-12">
-            <div class="form-group">
 
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.Image)
-                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.Image)">
-                    <input type="file" class="form-control-file">
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">/</div>
-                        </div>
-                        @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.Image, new { @class = "form-control image", @disabled = true })
-                    </div>
-                </div>
-
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBox.Header)
-                @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBox.Header, new { @class = "form-control header" })
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Text)
-                @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().LeftSlide.TextBox.Text, new { @class = "form-control textValue", @rows = "5" })
-            </div>
-        </div>
-
-        <div class="col-md-6 col-12">
-            <div class="form-group">
-
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.Image)
-                <div class="@Html.NameFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.Image)">
-                    <input type="file" class="form-control-file">
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">/</div>
-                        </div>
-                        @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.Image, new { @class = "form-control image", @disabled = true })
-                    </div>
-                </div>
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Header)
-                @Html.TextBoxFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Header, new { @class = "form-control header" })
-                @Html.LabelFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Text)
-                @Html.TextAreaFor(m => m.ContentCarousel.SlidePairs.FirstOrDefault().RightSlide.TextBox.Text, new { @class = "form-control textValue", @rows = "5" })
-            </div>
+    </div>
+    <div class="extraSlides"></div>
+    <div class="row mb-3">
+        <div class="col-12">
+            <button class="btn btn-primary" id="addSlidePair">Add Slide Pair</button>
         </div>
     </div>
-
     <div class="row">
         <div class="col-12">
             <div class="form-group">
@@ -194,7 +149,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-12">
             <div class="preview">

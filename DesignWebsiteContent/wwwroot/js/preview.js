@@ -129,10 +129,16 @@ var hideOwlNav = function () {
 var slideCarousel = function () {
     $('.owl-carousel').on('translate.owl.carousel', function () {
         if ($(this).find('button.owl-prev').hasClass('disabled')) {
-            $(this).find('.carousel-control-next').css("width", "100%");
+
+            $(this).find('.carousel-control-next').css({ "width": "" });
+            $(this).closest('.rect').css({ "border-radius": "" });
+            $(this).closest('.rect').css({ "padding": "" });
+            $(this).closest('.item img').css("border-radius", "25px");
         } else {
-            $(this).find('.carousel-control-next').css({ "width": "45px" });
-            $(this).find('.rect').css({ "padding-left": "" });
+            $(this).find('.carousel-control-next').css("width", "45px");
+            $(this).closest('.rect').css("border-radius", "6px");
+            $(this).closest('.item img').css("border-radius", "6px");
+            $(this).closest('.rect').css("padding", "0.25rem 0 0.25rem 0");
         }
     });
 };
