@@ -9,8 +9,9 @@ namespace DesignWebsiteContent.Models {
     public class ContentCarousel {
         [Display(Name = "Images File Path")]
         public string FilePath { get; set; }
-
-        public ThumbnailSlidePair ThumbnailSlidePair { get; set; }
-        public List<SlidePair> SlidePairs { get; set; }
+        public string Thumbnail { get; set; }
+        public string Title { get; set; }
+        public string Caption { get; set; }
+        public List<Slide> Slides { get; set; }
     }
 }

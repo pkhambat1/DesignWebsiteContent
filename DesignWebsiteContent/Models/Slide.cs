@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace DesignWebsiteContent.Models {
-    public class ThumbnailSlidePair {
-        public string Thumbnail { get; set; }
-        public TitleBox TitleBox { get; set; }
+    public class Slide {
+        public List<string> TextBox { get; set; }
+        public string Image { get; set; }
     }
 }
