@@ -2,7 +2,19 @@
 $(document).ready(function () {
     $('#generate').unbind().on('click', submitGenerateHTML);
     $('#refresh').unbind().on('click', submitRefreshPreview);
+    $('#addSlidePair').unbind().on('click', addSlidePair);
+    $('.addImage').unbind().on('click', addImage);
+    $('.addTextBox').unbind().on('click', addTextBox);
+    $('#copy').unbind().on('click', copy);
+    copyFileName();
+
 });
+
+var bind = function () {
+    copyFileName();
+    $('.addImage').unbind().on('click', addImage);
+    $('.addTextBox').unbind().on('click', addTextBox);
+};
 
 var submitGenerateHTML = function () {
     var filePath = $('.filePath').val();
@@ -53,7 +65,7 @@ var submitGenerateHTML = function () {
 
     var slidePairs = [];
 
-    for (var j = 0; j < leftSlides.length; j++) {
+    for (var i = 0; i < leftSlides.length; i++) {
         slidePairs.push({
             LeftSlide: leftSlides[j],
             RightSlide: rightSlides[j]
@@ -93,18 +105,14 @@ var generateHTML = function (inputOutputModel) {
     });
 };
 
-$(function () {
+var copy = function () {
     $('#copy').click(function () {
         $('#output').focus();
         $('#output').select();
         document.execCommand('copy');
         $(".copied").text("Copied to clipboard").show().fadeOut(1200);
     });
-});
-
-$(document).ready(function () {
-    copyFileName();
-});
+};
 
 var copyFileName = function () {
     $('input[type="file"]').change(function (e) {
@@ -115,15 +123,31 @@ var copyFileName = function () {
     });
 };
 
-$(document).ready(function () {
-    $('#addSlidePair').click(function () {
-        console.log('yeeehaw');
-        var rawHTML = "";
-        rawHTML += "<div class=\"row\">\n";
-        rawHTML += "<div class=\"col-md-6 col-12\">\n<div class=\"form-group\">\n<label for=\"LeftSlide_Image\">Image</label>\n<div class=\"LeftSlide.Image\">\n<input type=\"file\" class=\"form-control-file\">\n<div class=\"input-group mb-2\">\n<div class=\"input-group-prepend\">\n<div class=\"input-group-text\">/</div></div>\n<input class=\"form-control image\" disabled=\"True\" id=\"LeftSlide_Image\" name=\"LeftSlide.Image\" type=\"text\" value=\"\"></div>\n</div>\n<label for=\"LeftSlide_TextBox_Header\">Header</label>\n<input class=\"form-control header\" id=\"LeftSlide_TextBox_Header\" name=\"LeftSlide.TextBox.Header\" type=\"text\" value=\"\">\n<label for=\"LeftSlide_TextBox_Text\">Text</label>\n<textarea class=\"form-control textValue\" id=\"LeftSlide_TextBox_Text\" name=\"LeftSlide.TextBox.Text\" rows=\"5\"></textarea>\n</div>\n</div>";
-        rawHTML += "<div class=\"col-md-6 col-12\">\n<div class=\"form-group\">\n<label for=\"RightSlide_Image\">Image</label>\n<div class=\"RightSlide.Image\">\n<input type=\"file\" class=\"form-control-file\">\n<div class=\"input-group mb-2\">\n<div class=\"input-group-prepend\">\n<div class=\"input-group-text\">/</div>\n</div>\n<input class=\"form-control image\" disabled=\"True\" id=\"RightSlide_Image\" name=\"RightSlide.Image\" type=\"text\" value=\"\">\n</div>\n</div>\n<label for=\"RightSlide_TextBox_Header\">Header</label>\n<input class=\"form-control header\" id=\"RightSlide_TextBox_Header\" name=\"RightSlide.TextBox.Header\" type=\"text\" value=\"\">\n<label for=\"RightSlide_TextBox_Text\">Text</label>\n<textarea class=\"form-control textValue\" id=\"RightSlide_TextBox_Text\" name=\"RightSlide.TextBox.Text\" rows=\"5\"></textarea>\n</div>\n</div>";
-        rawHTML += "</div>";
-        $('.extraSlides').append(rawHTML);
-        copyFileName();
-    });
-});
+var addSlidePair = function () {
+    var rawHTML = "";
+    rawHTML += "<div class=\"slidePair\"><div class=\"row\">";
+    var slide = "<div class=\"col-md-6 col-12\"><div class=\"form-group\"><label for=\"Image\">Image</label><div class=\"row\"><div class=\"col-md-5 col-12\"><input type=\"file\" class=\"form-control-file\"></div><div class=\"input-group mb-2 col-md-7 col-12\"><div class=\"input-group-prepend\"><div class=\"input-group-text\">/</div></div><input class=\"form-control image\" disabled=\"True\" id=\"Image\" name=\"Image\" type=\"text\" value=\"\"></div><div class=\"textBox col-12\"><label for=\"TextBox\">TextBox</label><textarea class=\"form-control textBox\" id=\"TextBox\" name=\"TextBox\" rows=\"5\"></textarea></div></div></div><div class=\"row\"><div class=\"col-12 mb-3\"><button class=\"btn btn-dark addImage mr-1\">+ Image</button><button class=\"btn btn-dark addTextBox\">+ TextBox</button></div></div></div>";
+
+    rawHTML += slide + slide + "</div></div>";
+    console.log(slide);
+
+    $('.extraSlides').append(rawHTML);
+
+    bind();
+};
+
+var addImage = function () {
+    var rawHTML = "";
+    rawHTML += "<label for=\"Image\">Image</label><div class=\"row\"><div class=\"col-md-5 col-12\"><input type=\"file\" class=\"form-control-file\"></div><div class=\"input-group mb-2 col-md-7 col-12\"><div class=\"input-group-prepend\"><div class=\"input-group-text\">/</div></div><input class=\"form-control image\" disabled=\"True\" id=\"Image\" name=\"Image\" type=\"text\" value=\"\"></div></div>";
+    $(this).closest('.slide').find('.extraInputs').append(rawHTML);
+    bind();
+};
+
+var addTextBox = function () {
+    var rawHTML = "";
+    rawHTML += "<label for=\"TextBox\">TextBox</label><textarea class=\"form-control textBox\" id=\"TextBox\" name=\"TextBox\" rows=\"5\"></textarea>";
+
+    $(this).closest('.slide').find('.extraInputs').append(rawHTML);
+    bind();
+};
+

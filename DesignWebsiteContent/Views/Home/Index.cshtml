@@ -17,101 +17,98 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-12">
-            <h4>Project</h4>
+            <h4>Design Project</h4>
         </div>
         <div class="col-md-6 col-12">
-            <div class="form-group">
-                @Html.LabelFor(m => m.ContentCarousel.FilePath)
+            <div class="slide">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ContentCarousel.FilePath)
 
-                <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">img/</div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">img/</div>
+                        </div>
+                        @Html.TextBoxFor(m => m.ContentCarousel.FilePath, new { @class = "form-control filePath" })
                     </div>
-                    @Html.TextBoxFor(m => m.ContentCarousel.FilePath, new { @class = "form-control filePath" })
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6 col-12">
-            <div class="form-group">
-                @Html.LabelFor(m => m.ContentCarousel.Thumbnail)
-                <div class="thumbnail row">
-                    <div class="col-md-5 col-12">
-                        <input type="file" class="form-control-file">
-                    </div>
-                    <div class="input-group mb-2 col-md-7 col-12">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">/</div>
+            <div class="slide">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ContentCarousel.Thumbnail)
+                    <div class="thumbnail row">
+                        <div class="col-md-6 col-12">
+                            <input type="file" class="form-control-file">
                         </div>
-                        @Html.TextBoxFor(m => m.ContentCarousel.Thumbnail, new { @class = "form-control", @disabled = true })
+                        <div class="input-group mb-2 col-md-6 col-12">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">/</div>
+                            </div>
+                            @Html.TextBoxFor(m => m.ContentCarousel.Thumbnail, new { @class = "form-control", @disabled = true })
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
         <div class="col-md-6 col-12">
-            <div class="form-group">
-                @Html.LabelFor(m => m.ContentCarousel.Title)
-                @Html.TextBoxFor(m => m.ContentCarousel.Title, new { @class = "form-control titleValue" })
-                @Html.LabelFor(m => m.ContentCarousel.Caption)
-                @Html.TextAreaFor(m => m.ContentCarousel.Caption, new { @class = "form-control caption", @rows = "5" })
+            <div class="slide">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ContentCarousel.Title)
+                    @Html.TextBoxFor(m => m.ContentCarousel.Title, new { @class = "form-control titleValue" })
+                    @Html.LabelFor(m => m.ContentCarousel.Caption)
+                    @Html.TextAreaFor(m => m.ContentCarousel.Caption, new { @class = "form-control caption", @rows = "3" })
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="slides">
+    <div class="slidePair mb-3">
         <div class="row">
-            <div class="col-md-6 col-12">
-                <div class="form-group">
-                    @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().Image)
-                    <div class="row">
-                        <div class="col-md-5 col-12">
-                            <input type="file" class="form-control-file">
-                        </div>
-                        <div class="input-group mb-2 col-md-7 col-12">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">/</div>
+            @for(int i = 0; i < 2; i++) {
+                <div class="col-md-6 col-12">
+                    <div class="slide">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().Image)
+                            <div class="row">
+                                <div class="col-md-6 col-12">
+                                    <input type="file" class="form-control-file">
+                                </div>
+                                <div class="input-group mb-2 col-md-6 col-12">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">/</div>
+                                    </div>
+                                    @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().Image, new { @class = "form-control image", @disabled = true })
+                                </div>
+
+                                <div class="textBox col-12">
+                                    @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().TextBox)
+                                    @Html.TextAreaFor(m => m.ContentCarousel.Slides.FirstOrDefault().TextBox, new { @class = "form-control textBox", @rows = "3" })
+                                </div>
                             </div>
-                            @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().Image, new { @class = "form-control image", @disabled = true })
+                            <div class="extraInputs"></div>
                         </div>
 
-                        <div class="textBox col-12">
-                            @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().TextBox)
-                            @Html.TextAreaFor(m => m.ContentCarousel.Slides.FirstOrDefault().TextBox, new { @class = "form-control textBox", @rows = "5" })
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                <button class="btn btn-dark addImage">+ Image</button>
+                                <button class="btn btn-dark addTextBox">+ TextBox</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-12">
-                <div class="form-group">
-                    @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().Image)
-                    <div class="row">
-                        <div class="col-md-5 col-12">
-                            <input type="file" class="form-control-file">
-                        </div>
-                        <div class="input-group mb-2 col-md-7 col-12">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">/</div>
-                            </div>
-                            @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().Image, new { @class = "form-control image", @disabled = true })
-                        </div>
+            }
 
-                        <div class="textBox col-12">
-                            @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().TextBox)
-                            @Html.TextAreaFor(m => m.ContentCarousel.Slides.FirstOrDefault().TextBox, new { @class = "form-control textBox", @rows = "5" })
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-
 
     </div>
     <div class="extraSlides"></div>
     <div class="row mb-3">
-        <div class="col-12">
-            <button class="btn btn-primary" id="addSlidePair">Add Slide Pair</button>
+        <div class="col-12 text-right">
+            <button class="btn btn-dark" id="addSlidePair">+ 2 Slides</button>
         </div>
     </div>
     <div class="row">
