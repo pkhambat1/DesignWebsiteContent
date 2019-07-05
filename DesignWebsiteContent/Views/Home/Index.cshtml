@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-12">
             <div class="form-group">
-                <h2>@Html.LabelFor(m => m.ContentCarousel)</h2>
+                <h2>Content Carousel</h2>
             </div>
         </div>
     </div>
@@ -22,13 +22,12 @@
         <div class="col-md-6 col-12">
             <div class="slide">
                 <div class="form-group">
-                    @Html.LabelFor(m => m.ContentCarousel.FilePath)
-
+                    <label>Image File Path</label>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text">img/</div>
                         </div>
-                        @Html.TextBoxFor(m => m.ContentCarousel.FilePath, new { @class = "form-control filePath" })
+                        <input type="text" name="FilePath" value="" class="form-control filePath"/>
                     </div>
                 </div>
             </div>
@@ -38,7 +37,7 @@
         <div class="col-md-6 col-12">
             <div class="slide">
                 <div class="form-group">
-                    @Html.LabelFor(m => m.ContentCarousel.Thumbnail)
+                    <label>Thumbnail</label>
                     <div class="thumbnail row">
                         <div class="col-md-6 col-12">
                             <input type="file" class="form-control-file">
@@ -47,7 +46,7 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text">/</div>
                             </div>
-                            @Html.TextBoxFor(m => m.ContentCarousel.Thumbnail, new { @class = "form-control", @disabled = true })
+                            <input type="text" name="Thumbnail" value="" class="form-control" disabled/>
                         </div>
                     </div>
 
@@ -57,10 +56,10 @@
         <div class="col-md-6 col-12">
             <div class="slide">
                 <div class="form-group">
-                    @Html.LabelFor(m => m.ContentCarousel.Title)
-                    @Html.TextBoxFor(m => m.ContentCarousel.Title, new { @class = "form-control titleValue" })
-                    @Html.LabelFor(m => m.ContentCarousel.Caption)
-                    @Html.TextAreaFor(m => m.ContentCarousel.Caption, new { @class = "form-control caption", @rows = "3" })
+                    <label>Title</label>
+                    <input type="text" name="Title" value="" class="form-control titleValue"/>
+                    <label>Caption</label>
+                    <textarea class="form-control caption" rows="3"></textarea>
                 </div>
             </div>
         </div>
@@ -72,30 +71,45 @@
                 <div class="col-md-6 col-12">
                     <div class="slide">
                         <div class="form-group">
-                            @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().Image)
+
                             <div class="row">
-                                <div class="col-md-6 col-12">
+                                <div class="col-12">
+                                    <label>Image</label>
+                                </div>
+                                <div class="col-md-5 col-12">
                                     <input type="file" class="form-control-file">
                                 </div>
-                                <div class="input-group mb-2 col-md-6 col-12">
+                                <div class="input-group mb-2 col-md-5 col-12">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">/</div>
                                     </div>
-                                    @Html.TextBoxFor(m => m.ContentCarousel.Slides.FirstOrDefault().Image, new { @class = "form-control image", @disabled = true })
+                                    <input type="text" name="image" value="" class="form-control image" disabled />
                                 </div>
-
-                                <div class="textBox col-12">
-                                    @Html.LabelFor(m => m.ContentCarousel.Slides.FirstOrDefault().TextBox)
-                                    @Html.TextAreaFor(m => m.ContentCarousel.Slides.FirstOrDefault().TextBox, new { @class = "form-control textBox", @rows = "3" })
+                                <div class="col-md-2 col-12 text-right">
+                                    <button class="btn btn-danger btn-sm deleteInput"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <label for="TextBox">TextBox</label>
+                                </div>
+                                <div class="textBox col-md-10 col-12">
+                                    <textarea class="form-control textBox" rows="3"></textarea>
+                                </div>
+                                <div class="col-md-2 col-12 text-right">
+                                    <button class="btn btn-danger btn-sm deleteInput"><i class="fas fa-trash"></i></button>
                                 </div>
                             </div>
                             <div class="extraInputs"></div>
                         </div>
 
                         <div class="row">
-                            <div class="col-12 mb-3">
+                            <div class="col-auto mr-auto">
                                 <button class="btn btn-dark addImage">+ Image</button>
                                 <button class="btn btn-dark addTextBox">+ TextBox</button>
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-danger btn-sm deleteSlide">Delete Slide</button>
                             </div>
                         </div>
                     </div>
@@ -105,7 +119,9 @@
         </div>
 
     </div>
-    <div class="extraSlides"></div>
+    <div class="extraSlides">
+        <div class="row"></div>
+    </div>
     <div class="row mb-3">
         <div class="col-12 text-right">
             <button class="btn btn-dark" id="addSlidePair">+ 2 Slides</button>
@@ -120,14 +136,13 @@
     </div>
     <hr>
 </div>
-</div>
 
 <div class="container">
     <div class="row justify-content-middle">
         <div class="col-12">
             <div class="form-group">
-                <h4>@Html.LabelFor(m => m.Output)</h4>
-                @Html.TextAreaFor(m => m.Output, new { @class = "form-control", @id = "output", @rows = "10", @style = "font-family:calibri;" })
+                <h4>Output</h4>
+                <textarea class="form-control" id="output" rows="10" style="font-family:Calibri;"></textarea>
             </div>
         </div>
         <div class="col-auto mr-auto">

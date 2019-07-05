@@ -3,17 +3,17 @@ $(document).ready(function () {
     $('#generate').unbind().on('click', submitGenerateHTML);
     $('#refresh').unbind().on('click', submitRefreshPreview);
     $('#addSlidePair').unbind().on('click', addSlidePair);
-    $('.addImage').unbind().on('click', addImage);
-    $('.addTextBox').unbind().on('click', addTextBox);
     $('#copy').unbind().on('click', copy);
-    copyFileName();
 
+    bind();
 });
 
 var bind = function () {
     copyFileName();
     $('.addImage').unbind().on('click', addImage);
     $('.addTextBox').unbind().on('click', addTextBox);
+    $('.deleteSlide').unbind().on('click', deleteSlide);
+    $('.deleteInput').unbind().on('click', deleteInput);
 };
 
 var submitGenerateHTML = function () {
@@ -91,7 +91,6 @@ var submitRefreshPreview = function () {
 };
 
 var generateHTML = function (inputOutputModel) {
-    console.log('generateHTML');
     $.ajax({
         type: "POST",
         url: "/Home/GenerateJSON",
@@ -106,12 +105,10 @@ var generateHTML = function (inputOutputModel) {
 };
 
 var copy = function () {
-    $('#copy').click(function () {
-        $('#output').focus();
-        $('#output').select();
-        document.execCommand('copy');
-        $(".copied").text("Copied to clipboard").show().fadeOut(1200);
-    });
+    $('#output').focus();
+    $('#output').select();
+    document.execCommand('copy');
+    $(".copied").text("Copied to clipboard").show().fadeOut(1200);
 };
 
 var copyFileName = function () {
@@ -125,29 +122,34 @@ var copyFileName = function () {
 
 var addSlidePair = function () {
     var rawHTML = "";
-    rawHTML += "<div class=\"slidePair\"><div class=\"row\">";
-    var slide = "<div class=\"col-md-6 col-12\"><div class=\"form-group\"><label for=\"Image\">Image</label><div class=\"row\"><div class=\"col-md-5 col-12\"><input type=\"file\" class=\"form-control-file\"></div><div class=\"input-group mb-2 col-md-7 col-12\"><div class=\"input-group-prepend\"><div class=\"input-group-text\">/</div></div><input class=\"form-control image\" disabled=\"True\" id=\"Image\" name=\"Image\" type=\"text\" value=\"\"></div><div class=\"textBox col-12\"><label for=\"TextBox\">TextBox</label><textarea class=\"form-control textBox\" id=\"TextBox\" name=\"TextBox\" rows=\"5\"></textarea></div></div></div><div class=\"row\"><div class=\"col-12 mb-3\"><button class=\"btn btn-dark addImage mr-1\">+ Image</button><button class=\"btn btn-dark addTextBox\">+ TextBox</button></div></div></div>";
+    var slide = "<div class=\"col-md-6 col-12\"><div class=\"slide\"><div class=\"form-group\"><div class=\"row\"><div class=\"col-12\"><label for=\"Image\">Image</label></div><div class=\"col-md-5 col-12\"><input type=\"file\" class=\"form-control-file\"></div><div class=\"input-group mb-2 col-md-5 col-12\"><div class=\"input-group-prepend\"><div class=\"input-group-text\">/</div></div><input class=\"form-control image\" disabled=\"True\" id=\"Image\" name=\"Image\" type=\"text\" value=\"\"></div><div class=\"col-md-2 col-12 text-right\"><button class=\"btn btn-danger btn-sm deleteInput\"><i class=\"fas fa-trash\"></i></button></div></div><div class=\"row\"><div class=\"col-12\"><label for=\"TextBox\">TextBox</label></div><div class=\"textBox col-md-10 col-12\"><textarea class=\"form-control textBox\" id=\"TextBox\" name=\"TextBox\" rows=\"3\"></textarea></div><div class=\"col-md-2 col-12 text-right\"><button class=\"btn btn-danger btn-sm deleteInput\"><i class=\"fas fa-trash\"></i></button></div></div><div class=\"extraInputs\"></div></div><div class=\"row\"><div class=\"col-auto mr-auto\"><button class=\"btn btn-dark mr-1 addImage\">+ Image</button><button class=\"btn btn-dark addTextBox\">+ TextBox</button></div><div class=\"col-auto\"><button class=\"btn btn-danger btn-sm deleteSlide\">Delete Slide</button></div></div></div></div>";
+    rawHTML += slide + slide;
 
-    rawHTML += slide + slide + "</div></div>";
-    console.log(slide);
-
-    $('.extraSlides').append(rawHTML);
+    $('.extraSlides').find('.row').first().append(rawHTML);
 
     bind();
 };
 
 var addImage = function () {
     var rawHTML = "";
-    rawHTML += "<label for=\"Image\">Image</label><div class=\"row\"><div class=\"col-md-5 col-12\"><input type=\"file\" class=\"form-control-file\"></div><div class=\"input-group mb-2 col-md-7 col-12\"><div class=\"input-group-prepend\"><div class=\"input-group-text\">/</div></div><input class=\"form-control image\" disabled=\"True\" id=\"Image\" name=\"Image\" type=\"text\" value=\"\"></div></div>";
+    rawHTML += "<div class=\"row\"><div class=\"col-12\"><label for=\"Image\">Image</label></div><div class=\"col-md-5 col-12\"><input type=\"file\" class=\"form-control-file\"></div><div class=\"input-group mb-2 col-md-5 col-12\"><div class=\"input-group-prepend\"><div class=\"input-group-text\">/</div></div><input class=\"form-control image\" disabled=\"True\" id=\"Image\" name=\"Image\" type=\"text\" value=\"\"></div><div class=\"col-md-2 col-12 text-right\"><button class=\"btn btn-danger btn-sm deleteInput\"><i class=\"fas fa-trash\"></i></button></div></div>";
+
     $(this).closest('.slide').find('.extraInputs').append(rawHTML);
     bind();
 };
 
 var addTextBox = function () {
     var rawHTML = "";
-    rawHTML += "<label for=\"TextBox\">TextBox</label><textarea class=\"form-control textBox\" id=\"TextBox\" name=\"TextBox\" rows=\"5\"></textarea>";
+    rawHTML += "<div class=\"row\"><div class=\"col-12\"><label for=\"TextBox\">TextBox</label></div><div class=\"col-md-10 col-12\"><textarea class=\"form-control textBox\" id=\"TextBox\" name=\"TextBox\" rows=\"3\"></textarea></div><div class=\"col-md-2 col-12 text-right\"><button class=\"btn btn-danger btn-sm deleteInput\"><i class=\"fas fa-trash\"></i></button></div></div>";
 
     $(this).closest('.slide').find('.extraInputs').append(rawHTML);
     bind();
 };
 
+var deleteSlide = function () {
+    $(this).closest('.slide').parent('.col-12').remove();
+};
+
+var deleteInput = function () {
+    $(this).closest('.row').remove();
+};
