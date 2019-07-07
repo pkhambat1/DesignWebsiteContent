@@ -6,73 +6,66 @@
 }
 
 <div class="container mb-2">
-    <div class="row">
-        <div class="col-12">
-            <div class="form-group">
-                <h2>Content Carousel</h2>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-12">
-            <h4>Design Project</h4>
-        </div>
-        <div class="col-md-6 col-12">
-            <div class="slide">
-                <div class="form-group">
-                    <label>Image File Path</label>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">img/</div>
-                        </div>
-                        <input type="text" name="FilePath" value="" class="form-control filePath"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6 col-12">
-            <div class="slide">
-                <div class="form-group">
-                    <label>Thumbnail</label>
-                    <div class="thumbnail row">
-                        <div class="col-md-6 col-12">
-                            <input type="file" class="form-control-file">
-                        </div>
-                        <div class="input-group mb-2 col-md-6 col-12">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">/</div>
-                            </div>
-                            <input type="text" name="Thumbnail" value="" class="form-control" disabled/>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-12">
-            <div class="slide">
-                <div class="form-group">
-                    <label>Title</label>
-                    <input type="text" name="Title" value="" class="form-control titleValue"/>
-                    <label>Caption</label>
-                    <textarea class="form-control caption" rows="3"></textarea>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="slidePair mb-3">
+    <div class="slides mb-3">
         <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <h2>Content Carousel</h2>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <h4>Design Project</h4>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="slideBox">
+                    <div class="form-group">
+                        <label>Image File Path</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">img/</div>
+                            </div>
+                            <input type="text" name="FilePath" value="" class="form-control filePath" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-12">
+                <div class="slide slideBox">
+                    <div class="form-group">
+                        <label>Thumbnail</label>
+                        <div class="thumbnail row">
+                            <div class="col-md-6 col-12">
+                                <input type="file" class="form-control-file">
+                            </div>
+                            <div class="input-group mb-2 col-md-6 col-12">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">/</div>
+                                </div>
+                                <input type="text" name="Thumbnail" value="" class="form-control" disabled />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="slide slideBox">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" name="Title" value="" class="form-control titleValue" />
+                        <label>Caption</label>
+                        <textarea class="form-control caption" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+
             @for(int i = 0; i < 2; i++) {
                 <div class="col-md-6 col-12">
-                    <div class="slide">
+                    <div class="slide slideBox">
                         <div class="form-group">
 
-                            <div class="row">
+                            <div class="row slideInput image">
                                 <div class="col-12">
                                     <label>Image</label>
                                 </div>
@@ -89,7 +82,7 @@
                                     <button class="btn btn-danger btn-sm deleteInput"><i class="fas fa-trash"></i></button>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row slideInput textBox">
                                 <div class="col-12">
                                     <label for="TextBox">TextBox</label>
                                 </div>
@@ -100,7 +93,6 @@
                                     <button class="btn btn-danger btn-sm deleteInput"><i class="fas fa-trash"></i></button>
                                 </div>
                             </div>
-                            <div class="extraInputs"></div>
                         </div>
 
                         <div class="row">
@@ -115,13 +107,10 @@
                     </div>
                 </div>
             }
-
         </div>
 
     </div>
-    <div class="extraSlides">
-        <div class="row"></div>
-    </div>
+
     <div class="row mb-3">
         <div class="col-12 text-right">
             <button class="btn btn-dark" id="addSlidePair">+ 2 Slides</button>
