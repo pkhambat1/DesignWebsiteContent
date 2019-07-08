@@ -93,7 +93,7 @@ var loadCarousel = function () {
         items: 1,
         margin: 3,
         autoHeight: true,
-        mouseDrag: false,
+        mouseDrag: true,
         autoplay: false,
         nav: true,
         lazyLoad: true,
@@ -114,31 +114,45 @@ var loadCarousel = function () {
 
 };
 
-var hideOwlNav = function () {
-    $('.arrowbox, .owl-dots').css("opacity", "0");
-    $('.rect').hover(function () {
-        $(this).find('.arrowbox').css("opacity", ".4");
-        $(this).find('.owl-dots').css("opacity", "1");
-    },
-        function () {
-            $(this).find('.arrowbox').css("opacity", "0");
-            $(this).find('.owl-dots').css("opacity", "0");
-        });
-};
-
 var slideCarousel = function () {
     $('.owl-carousel').on('translate.owl.carousel', function () {
         if ($(this).find('button.owl-prev').hasClass('disabled')) {
 
+            // revert to right arrow control dimensions
             $(this).find('.carousel-control-next').css({ "width": "" });
+            $(this).find('.carousel-control-next').css({ "bottom": "" });
+            $(this).find('.carousel-control-next').css({ "top": "" });
             $(this).closest('.rect').css({ "border-radius": "" });
             $(this).closest('.rect').css({ "padding": "" });
             $(this).closest('.item img').css("border-radius", "25px");
+            $(this).find('.arrowbox').css({ "opacity": "" });
+            $(this).find('.owl-dots').css({ "opacity": "" });
+            // Don't hide anything
+            $(this).closest('.rect').hover(function () {
+                $(this).find('.arrowbox').css({ "opacity": "" });
+                $(this).find('.owl-dots').css({ "opacity": "" });
+            });
         } else {
+            // Expand right arrow control
             $(this).find('.carousel-control-next').css("width", "45px");
+            $(this).find('.carousel-control-next').css("bottom", "20px");
+            $(this).find('.carousel-control-next').css("top", "0");
             $(this).closest('.rect').css("border-radius", "6px");
             $(this).closest('.item img').css("border-radius", "6px");
             $(this).closest('.rect').css("padding", "0.25rem 0 0.25rem 0");
+            $(this).find('.arrowbox').css("opacity", ".4");
+            $(this).find('.owl-dots').css("opacity", "1");
+
+            // Hide arrowbox and owldots
+            $(this).closest('.rect').hover(function () {
+                console.log('hovaa');
+                $(this).find('.arrowbox').css("opacity", ".4");
+                $(this).find('.owl-dots').css("opacity", "1");
+            },
+                function () {
+                    $(this).find('.arrowbox').css({ "opacity": "" });
+                    $(this).find('.owl-dots').css({ "opacity": "" });
+                });
         }
     });
 };
