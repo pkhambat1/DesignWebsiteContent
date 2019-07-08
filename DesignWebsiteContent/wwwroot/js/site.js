@@ -58,6 +58,12 @@ var submitGenerateHTML = function () {
     generateHTML(inputOutputModel);
 };
 
+$(document).ready(function () {
+    $('.carousel-control-prev, .carousel-control-next, .owl-dots').on('click', function () {
+        $('html,body').animate({ scrollTop: $(this).closest('.rect').offset().top - 80 }, 400);
+    });
+}); 
+
 var submitRefreshPreview = function () {
     $('.preview').html($('#output').val());
     loadCarousel();

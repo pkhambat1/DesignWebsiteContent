@@ -127,11 +127,16 @@ var slideCarousel = function () {
             $(this).closest('.item img').css("border-radius", "25px");
             $(this).find('.arrowbox').css({ "opacity": "" });
             $(this).find('.owl-dots').css({ "opacity": "" });
-            // Don't hide anything
+            // Revert arrowbox to hidden
             $(this).closest('.rect').hover(function () {
                 $(this).find('.arrowbox').css({ "opacity": "" });
                 $(this).find('.owl-dots').css({ "opacity": "" });
             });
+
+            // revert rect hover to expand
+            $(this).closest('.rect:hover').css({ "transform": "" });
+            $(this).closest('.rect:hover').css({ "margin-bottom": "" });
+
         } else {
             // Expand right arrow control
             $(this).find('.carousel-control-next').css("width", "45px");
@@ -143,7 +148,7 @@ var slideCarousel = function () {
             $(this).find('.arrowbox').css("opacity", ".4");
             $(this).find('.owl-dots').css("opacity", "1");
 
-            // Hide arrowbox and owldots
+            // Unide arrowbox and owldots
             $(this).closest('.rect').hover(function () {
                 console.log('hovaa');
                 $(this).find('.arrowbox').css("opacity", ".4");
@@ -153,6 +158,9 @@ var slideCarousel = function () {
                     $(this).find('.arrowbox').css({ "opacity": "" });
                     $(this).find('.owl-dots').css({ "opacity": "" });
                 });
+            $(this).closest('.rect:hover').css("transform", "scale(1.05)");
+            $(this).closest('.rect:hover').css("margin-bottom", "40px");
+
         }
     });
 };
