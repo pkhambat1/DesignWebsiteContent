@@ -68,7 +68,6 @@ var submitRefreshPreview = function () {
     $('.preview').html($('#output').val());
     loadCarousel();
     slideCarousel();
-    //hideOwlNav();
 };
 
 var generateHTML = function (inputOutputModel) {
@@ -79,7 +78,6 @@ var generateHTML = function (inputOutputModel) {
         data: inputOutputModel,
         success: function (d) {
             $('#output').val(d.output);
-            slideCarousel();
             submitRefreshPreview();
         },
         error: function (err) { }

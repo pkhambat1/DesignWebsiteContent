@@ -402,12 +402,19 @@ span {
 
 .rect {
     background-color: white; /* offwhite */
-    box-shadow: 0 2px 10px rgba(0,0,0,.15);
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
     border-radius: 25px;
     padding: 1.5rem 0 .25rem 0;
     margin-bottom: 25px;
     transition: .4s;
 }
+
+    .rect:hover {
+        -webkit-transform: scale(1.002);
+        transform: scale(1.002);
+        box-shadow: 0px 2px 12px rgba(0,0,0,.15)
+    }
+
 
 #owl-demo .item img {
     display: block;
@@ -521,58 +528,6 @@ button:focus {
     outline: 0;
 }
 
-.hamburger {
-    vertical-align: middle;
-}
-
-
-#nav-icon4 span:nth-child(1) {
-    top: 0px;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
-    transform-origin: left center;
-}
-
-#nav-icon4 span:nth-child(2) {
-    top: 18px;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
-    transform-origin: left center;
-}
-
-#nav-icon4 span:nth-child(3) {
-    top: 36px;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
-    transform-origin: left center;
-}
-
-#nav-icon4.open span:nth-child(1) {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: -3px;
-    left: 8px;
-}
-
-#nav-icon4.open span:nth-child(2) {
-    width: 0%;
-    opacity: 0;
-}
-
-#nav-icon4.open span:nth-child(3) {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    top: 39px;
-    left: 8px;
-}
-
 .textDescription {
     border-style: solid;
     border-width: 1px;
@@ -591,8 +546,4 @@ button:focus {
 
 div.col-12 {
     transition: .4s;
-}
-
-.scale-on-hover:hover {
-    transform: scale(1.05);
 }
