@@ -100,7 +100,53 @@ var copyFileName = function () {
 
 var addSlidePair = function () {
     var rawHTML = "";
-    var slide = "<div class=\"col-md-6 col-12\"><div class=\"slide slideBox\"><div class=\"form-group\"><div class=\"row slideInput image\"><div class=\"col-12\"><label for=\"Image\">Image</label></div><div class=\"col-md-5 col-12\"><input type=\"file\" class=\"form-control-file\"></div><div class=\"input-group mb-2 col-md-5 col-12\"><div class=\"input-group-prepend\"><div class=\"input-group-text\">/</div></div><input class=\"form-control image\" disabled=\"True\" id=\"Image\" name=\"Image\" type=\"text\" value=\"\"></div><div class=\"col-md-2 col-12 text-right\"><button class=\"btn btn-danger btn-sm deleteInput\"><i class=\"fas fa-trash\"></i></button></div></div><div class=\"row slideInput textBox\"><div class=\"col-12\"><label for=\"TextBox\">TextBox</label></div><div class=\"textBox col-md-10 col-12\"><textarea class=\"form-control textBox\" id=\"TextBox\" name=\"TextBox\" rows=\"3\"></textarea></div><div class=\"col-md-2 col-12 text-right\"><button class=\"btn btn-danger btn-sm deleteInput\"><i class=\"fas fa-trash\"></i></button></div></div></div><div class=\"row\"><div class=\"col-auto mr-auto\"><button class=\"btn btn-dark mr-1 addImage\">+ Image</button><button class=\"btn btn-dark addTextBox\">+ TextBox</button></div><div class=\"col-auto\"><button class=\"btn btn-danger btn-sm deleteSlide\">Delete Slide</button></div></div></div></div>";
+    var slide = `<div class="col-md-6 col-12">
+                    <div class="slide slideBox">
+                        <div class="form-group">
+                            <div class="row slideInput image">
+                                <div class="col-12">
+                                    <label for="Image">Image</label>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <input type="file" class="form-control-file">
+                                </div>
+                                <div class="input-group mb-2 col-md-5 col-12">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">/</div>
+                                    </div>
+                                    <input class="form-control image" disabled="True" id="Image" name="Image" type="text" value="">
+                                </div>
+                                <div class="col-md-2 col-12 text-right">
+                                    <button class="btn btn-danger btn-sm deleteInput">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row slideInput textBox">
+                                <div class="col-12">
+                                    <label for="TextBox">TextBox</label>
+                                </div>
+                                <div class="textBox col-md-10 col-12">
+                                    <textarea class="form-control textBox" id="TextBox" name="TextBox" rows="3"></textarea>
+                                </div>
+                                <div class="col-md-2 col-12 text-right">
+                                    <button class="btn btn-danger btn-sm deleteInput">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-auto mr-auto">
+                                <button class="btn btn-dark mr-1 addImage">+ Image</button>
+                                <button class="btn btn-dark addTextBox">+ TextBox</button>
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-danger btn-sm deleteSlide">Delete Slide</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
     rawHTML += slide + slide;
 
     $('.slides').find('.row').first().append(rawHTML);
@@ -110,7 +156,25 @@ var addSlidePair = function () {
 
 var addImage = function () {
     var rawHTML = "";
-    rawHTML += "<div class=\"row slideInput image\"><div class=\"col-12\"><label for=\"Image\">Image</label></div><div class=\"col-md-5 col-12\"><input type=\"file\" class=\"form-control-file\"></div><div class=\"input-group mb-2 col-md-5 col-12\"><div class=\"input-group-prepend\"><div class=\"input-group-text\">/</div></div><input class=\"form-control image\" disabled=\"True\" id=\"Image\" name=\"Image\" type=\"text\" value=\"\"></div><div class=\"col-md-2 col-12 text-right\"><button class=\"btn btn-danger btn-sm deleteInput\"><i class=\"fas fa-trash\"></i></button></div></div>";
+    rawHTML += `<div class="row slideInput image">
+                    <div class="col-12">
+                        <label for="Image">Image</label>
+                    </div>
+                    <div class="col-md-5 col-12">
+                        <input type="file" class="form-control-file">
+                    </div>
+                    <div class="input-group mb-2 col-md-5 col-12">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">/</div>
+                        </div>
+                        <input class="form-control image" disabled="True" id="Image" name="Image" type="text" value="">
+                    </div>
+                    <div class="col-md-2 col-12 text-right">
+                        <button class="btn btn-danger btn-sm deleteInput">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>`;
 
     $(this).closest('.slide').find('.form-group').first().append(rawHTML);
     bind();
@@ -118,7 +182,19 @@ var addImage = function () {
 
 var addTextBox = function () {
     var rawHTML = "";
-    rawHTML += "<div class=\"row slideInput textBox\"><div class=\"col-12\"><label for=\"TextBox\">TextBox</label></div><div class=\"col-md-10 col-12\"><textarea class=\"form-control textBox\" id=\"TextBox\" name=\"TextBox\" rows=\"3\"></textarea></div><div class=\"col-md-2 col-12 text-right\"><button class=\"btn btn-danger btn-sm deleteInput\"><i class=\"fas fa-trash\"></i></button></div></div>";
+    rawHTML += `<div class="row slideInput textBox">
+                    <div class="col-12">
+                        <label for="TextBox">TextBox</label>
+                    </div>
+                    <div class="col-md-10 col-12">
+                        <textarea class="form-control textBox" id="TextBox" name="TextBox" rows="3"></textarea>
+                    </div>
+                    <div class="col-md-2 col-12 text-right">
+                        <button class="btn btn-danger btn-sm deleteInput">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>`;
 
     $(this).closest('.slide').find('.form-group').first().append(rawHTML);
     bind();
