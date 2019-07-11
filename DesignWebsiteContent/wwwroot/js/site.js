@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+﻿$(document).ready(() => {
     $('#generate').unbind().on('click', submitGenerateHTML);
     $('#refresh').unbind().on('click', submitRefreshPreview);
     $('#addSlidePair').unbind().on('click', addSlidePair);
@@ -7,7 +7,7 @@
     bind();
 });
 
-var bind = function () {
+var bind = () => {
     copyFileName();
     $('.addImage').unbind().on('click', addImage);
     $('.addTextBox').unbind().on('click', addTextBox);
@@ -59,46 +59,45 @@ var submitGenerateHTML = function () {
 };
 
 $(document).ready(function () {
-    $('.carousel-control-prev, .carousel-control-next, .owl-dots').on('click', function () {
+    $('.carousel-control-prev, .carousel-control-next, .owl-dots').on('click', () => {
         $('html,body').animate({ scrollTop: $(this).closest('.rect').offset().top - 80 }, 400);
     });
-}); 
+});
 
-var submitRefreshPreview = function () {
+var submitRefreshPreview = () => {
     $('.preview').html($('#output').val());
     loadCarousel();
     slideCarousel();
 };
 
-var generateHTML = function (inputOutputModel) {
+var generateHTML = inputOutputModel => {
 
     $.ajax({
         type: "POST",
         url: "/Home/GenerateJSON",
         data: inputOutputModel,
-        success: function (d) {
+        success: d => {
             $('#output').val(d.output);
             submitRefreshPreview();
-        },
-        error: function (err) { }
+        }
     });
 };
 
-var copy = function () {
+var copy = () => {
     $('#output').focus();
     $('#output').select();
     document.execCommand('copy');
     $(".copied").text("Copied to clipboard").show().fadeOut(1200);
 };
 
-var copyFileName = function () {
+var copyFileName = () => {
     $('input[type="file"]').change(function (e) {
         var fileName = e.target.files[0].name;
         $(this).closest('.slideInput').find('input[type="text"].image, input[type="text"].thumbnail').val(fileName);
     });
 };
 
-var addSlidePair = function () {
+var addSlidePair = () => {
     var rawHTML = "";
     var slide = `<div class="col-md-6 col-12">
                     <div class="slide slideBox">

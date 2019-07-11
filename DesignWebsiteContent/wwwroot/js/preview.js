@@ -1,8 +1,14 @@
-﻿$(document).ready(function () {
+﻿$(document).ready(() => {
     loadCarousel();
 });
 
-var loadCarousel = function () {
+$(document).ready(() => {
+    $('.carousel-control-prev, .carousel-control-next, .owl-dots').on('click', function () {
+        $('html,body').animate({ scrollTop: $(this).closest('.rect').offset().top - 80 }, 400);
+    });
+});
+
+var loadCarousel = () => {
     $('.owl-carousel').owlCarousel({
         items: 1,
         margin: 3,
@@ -23,19 +29,13 @@ var loadCarousel = function () {
         },
         navText: ["<div class=\"carousel-control-prev\" role=\"button\" data-slide=\"prev\"><div class=\"arrowbox\"><i class=\"fa fa-angle-left align-middle mt-4 mb-4 \"></i></div><span class=\"sr-only\">Previous</span></div>",
             "<div class=\"carousel-control-next\" role=\"button\" data-slide=\"next\"><div class=\"arrowbox\"><i class=\"fa fa-angle-right align-middle mt-4 mb-4 \"></i></div><span class=\"sr-only\">Next</span></div>"]
-    }).on("dragged.owl.carousel", function (event) {
+    }).on("dragged.owl.carousel", function () {
         $('html,body').animate({ scrollTop: $(this).closest('.rect').offset().top - 80 }, 400);
     });
 
 };
 
-$(document).ready(function () {
-    $('.carousel-control-prev, .carousel-control-next, .owl-dots').on('click', function () {
-        $('html,body').animate({ scrollTop: $(this).closest('.rect').offset().top - 80 }, 400);
-    });
-});  
-
-var slideCarousel = function () {
+var slideCarousel = () => {
     $('.owl-carousel').on('translate.owl.carousel', function () {
         if ($(this).find('button.owl-prev').hasClass('disabled')) {
 
@@ -43,8 +43,6 @@ var slideCarousel = function () {
             $(this).find('.carousel-control-next').css({ "width": "" });
             $(this).find('.carousel-control-next').css({ "bottom": "" });
             $(this).find('.carousel-control-next').css({ "top": "" });
-            //$(this).closest('.rect').css({ "border-radius": "" });
-            //$(this).closest('.rect').css({ "padding": "" });
             $(this).find('.arrowbox').css({ "opacity": "" });
             $(this).find('.owl-dots').css({ "opacity": "" });
             // Revert arrowbox to hidden
@@ -55,15 +53,12 @@ var slideCarousel = function () {
 
             // revert rect hover to expand
             $(this).closest('.rect:hover').css({ "transform": "" });
-            $(this).closest('.rect:hover').css({ "margin-bottom": "" });
 
         } else {
             // Expand right arrow control
             $(this).find('.carousel-control-next').css("width", "45px");
             $(this).find('.carousel-control-next').css("bottom", "20px");
             $(this).find('.carousel-control-next').css("top", "0");
-            //$(this).closest('.rect').css("border-radius", "6px");
-            //$(this).closest('.rect').css("padding", "0.25rem 0 0.25rem 0");
             $(this).find('.arrowbox').css("opacity", ".4");
             $(this).find('.owl-dots').css("opacity", "1");
 
@@ -78,8 +73,6 @@ var slideCarousel = function () {
                     $(this).find('.owl-dots').css({ "opacity": "" });
                 });
             $(this).closest('.rect:hover').css("transform", "scale(1)");
-            $(this).closest('.rect:hover').css("margin-bottom", "40px");
-
         }
     });
 };
