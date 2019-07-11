@@ -1,12 +1,14 @@
 ﻿$(document).ready(() => {
     loadCarousel();
+    scrollCarousel();
+    slideCarousel();
 });
 
-$(document).ready(() => {
+var scrollCarousel = () => {
     $('.carousel-control-prev, .carousel-control-next, .owl-dots').on('click', function () {
         $('html,body').animate({ scrollTop: $(this).closest('.rect').offset().top - 80 }, 400);
     });
-});
+};
 
 var loadCarousel = () => {
     $('.owl-carousel').owlCarousel({
