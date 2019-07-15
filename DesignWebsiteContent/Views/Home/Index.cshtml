@@ -1,5 +1,4 @@
-﻿@model DesignWebsiteContent.Models.InputOutput
-
+﻿
 @{
     ViewData["Title"] = "Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -19,7 +18,7 @@
             </div>
             <div class="col-md-6 col-12">
                 <div class="slideBox">
-                    <div class="form-group">
+                    <div class="form-group slideInput">
                         <label>Image File Path</label>
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
@@ -32,10 +31,10 @@
             </div>
 
             <div class="col-md-6 col-12">
-                <div class="slide slideBox">
+                <div class="slideBox">
                     <div class="form-group">
                         <label>Thumbnail</label>
-                        <div class="thumbnail row">
+                        <div class="thumbnail row slideInput">
                             <div class="col-md-6 col-12">
                                 <input type="file" class="form-control-file">
                             </div>
@@ -43,14 +42,14 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">/</div>
                                 </div>
-                                <input type="text" name="Thumbnail" value="" class="form-control" disabled />
+                                <input type="text" name="Thumbnail" value="" class="form-control thumbnail" disabled />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-12">
-                <div class="slide slideBox">
+                <div class="slideBox">
                     <div class="form-group">
                         <label>Title</label>
                         <input type="text" name="Title" value="" class="form-control titleValue" />
@@ -131,7 +130,7 @@
         <div class="col-12">
             <div class="form-group">
                 <h4>Output</h4>
-                <textarea class="form-control" id="output" rows="10" style="font-family:Calibri;"></textarea>
+                <textarea class="form-control" id="output" rows="10" style="font-family:Consolas;"></textarea>
             </div>
         </div>
         <div class="col-auto mr-auto">

@@ -1,5 +1,4 @@
-﻿
-$(document).ready(function () {
+﻿$(document).ready(function () {
     $('#generate').unbind().on('click', submitGenerateHTML);
     $('#refresh').unbind().on('click', submitRefreshPreview);
     $('#addSlidePair').unbind().on('click', addSlidePair);
@@ -19,36 +18,61 @@ var bind = function () {
 var submitGenerateHTML = function () {
 
     var slides = [];
-    
+
     $('.slide').each(function () {
-        var slide = [];
+        var inputs = [];
         $(this).find('.slideInput').each(function () {
             if ($(this).hasClass('image')) {
-                var name = $(this).find('input[type=text]').val();
-                slide.push({ "Name": name, "Type": "Image"});
+                inputs.push(
+                    {
+                        "Text": $(this).find('input[type=text]').val(),
+                        "Type": "Image"
+                    });
             } else if ($(this).hasClass('textBox')) {
-                var name = $(this).find('textarea').val();
-                slide.push({ "Name": "", "Type": "TextBox" });
+                inputs.push(
+                    {
+                        "Text": $(this).find('textarea').val(),
+                        "Type": "TextBox"
+                    });
             }
         });
-        slides.push(slide);
-        
+
+        slides.push({
+            Inputs: inputs
+        });
     });
 
-    console.log(slides);
+    var inputOutputModel = {
+        ContentCarousel: {
+            FilePath: $('.filePath').val(),
+            Thumbnail: $('input[type=text].thumbnail').val(),
+            Title: $('.titleValue').val(),
+            Caption: $('.caption').val(),
+            Slides: slides
+        },
+        Output: ""
+    };
 
-    var inputOutputModel = { };
-    //generateHTML(inputOutputModel);
+    console.log("inputOutputModel", inputOutputModel);
+
+    generateHTML(inputOutputModel);
 };
+
+$(document).ready(function () {
+    $('.carousel-control-prev, .carousel-control-next, .owl-dots').on('click', function () {
+        $('html,body').animate({ scrollTop: $(this).closest('.rect').offset().top - 80 }, 400);
+    });
+}); 
 
 var submitRefreshPreview = function () {
     $('.preview').html($('#output').val());
     loadCarousel();
     slideCarousel();
-    hideOwlNav();
+    //hideOwlNav();
 };
 
 var generateHTML = function (inputOutputModel) {
+
     $.ajax({
         type: "POST",
         url: "/Home/GenerateJSON",
@@ -72,9 +96,7 @@ var copy = function () {
 var copyFileName = function () {
     $('input[type="file"]').change(function (e) {
         var fileName = e.target.files[0].name;
-        $(this).parent().find('input[type="text"]#LeftSlide_Image,\
-                                input[type="text"]#RightSlide_Image,\
-                                input[type="text"]#ContentCarousel_ThumbnailSlidePair_Thumbnail').val(fileName);
+        $(this).closest('.slideInput').find('input[type="text"].image, input[type="text"].thumbnail').val(fileName);
     });
 };
 
