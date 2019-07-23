@@ -1,13 +1,7 @@
 ﻿using DesignWebsiteContent.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace DesignWebsiteContent
-{
-    public static class GenerateHTML
-    {
+namespace DesignWebsiteContent {
+    public static class GenerateHTML {
 
         public static InputOutput GenerateOutput(this InputOutput model) {
             var result = model;
@@ -28,10 +22,10 @@ namespace DesignWebsiteContent
                 for(int j = 0; j < model.ContentCarousel.Slides[i].Inputs.Count; j++) {
 
                     if(model.ContentCarousel.Slides[i].Inputs[j].Type == "Image") {
-                        rawHTML += "\t\t<div class=\"pl-1 pr-1 mb-2\">\n\t\t\t<img src=\"img/" + filePath + "/" + model.ContentCarousel.Slides[i].Inputs[j].Text + "\">\n\t\t</div>\n";
+                        rawHTML += "\t\t<div class=\"pl-1 pr-1 mb-2\">\n\t\t\t<img src=\"img/" + filePath + "/" + model.ContentCarousel.Slides[i].Inputs[j].Name + "\">\n\t\t</div>\n";
                     } else if(model.ContentCarousel.Slides[i].Inputs[j].Type == "TextBox") {
                         rawHTML += "\t\t<div class=\"textDescription mb-2\">\n";
-                        rawHTML += "\t\t\t<p>" + model.ContentCarousel.Slides[i].Inputs[j].Text + "</p>\n";
+                        rawHTML += "\t\t\t<p>" + model.ContentCarousel.Slides[i].Inputs[j].Name + "</p>\n";
                         rawHTML += "\t\t</div>\n";
                     }
                 }
